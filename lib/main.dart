@@ -1,3 +1,5 @@
+import 'package:evently_app/core/theme/app_theme.dart';
+import 'package:evently_app/ui/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,6 +11,12 @@ class EventlyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.light,
+      theme: AppTheme.lightTheme,
+      initialRoute: SplashScreen.id,
+      routes: {SplashScreen.id: (context) => SplashScreen()},
+    );
   }
 }
