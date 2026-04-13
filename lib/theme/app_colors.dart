@@ -10,6 +10,7 @@ abstract class AppColors {
   static const Color inputs = Color(0xffFFFFFF);
   static const Color stroke = Color(0xffF0F0F0);
   static const Color red = Color(0xffFF3232);
+  static const Color white = Color(0xFFFFFFFF);
 
   /// Dark Mode
   static const Color mainDark = Color(0xff457AED);
