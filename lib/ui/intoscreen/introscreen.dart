@@ -1,6 +1,5 @@
 import 'package:evently_app/core/l10n/app_localizations.dart';
 import 'package:evently_app/core/providers/app_config_provider.dart';
-import 'package:evently_app/ui/app_setup/widgets/build_item_selector.dart';
 import 'package:evently_app/ui/intoscreen/models/onboarding_model.dart';
 import 'package:evently_app/ui/intoscreen/widgets/dot_indicator.dart';
 import 'package:evently_app/ui/intoscreen/widgets/onboarding_page.dart';

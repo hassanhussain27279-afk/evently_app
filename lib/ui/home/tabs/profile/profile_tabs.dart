@@ -1,13 +1,15 @@
 import 'package:evently_app/core/l10n/app_localizations.dart';
 import 'package:evently_app/core/providers/app_config_provider.dart';
 import 'package:evently_app/core/utils/dialog_utils.dart';
+import 'package:evently_app/data/firebase/firebase_auth_service.dart';
 import 'package:evently_app/ui/login/login_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ProfileTabs extends StatelessWidget {
-  const ProfileTabs({super.key});
+  ProfileTabs({super.key});
+  final FirebaseAuthService authService = FirebaseAuthService();
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
@@ -125,7 +127,7 @@ class ProfileTabs extends StatelessWidget {
                               context,
                               LoginScreen.id,
                             );
-                            await FirebaseAuth.instance.signOut();
+                            await authService.signOut();
                           },
                         );
                       },

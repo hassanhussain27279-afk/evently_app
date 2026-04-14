@@ -30,25 +30,33 @@ class FirebaseEventsDatabase {
     }
   }
 
-  Stream<QuerySnapshot<Event>> getFavoriteEvents(String categoryId) {
-    var uid = FirebaseAuth.instance.currentUser?.uid ?? '';
-    return getcollectionReference()
-        .where('favorites', arrayContains: uid)
-        .where('categoryId', isEqualTo: categoryId)
-        .snapshots();
+  Stream<QuerySnapshot<Event>> getFavoriteEvents([String? categoryId]) {
+    var uid = FirebaseAuth.instance.currentUser?.uid;
+
+    if (uid == null) {
+      return const Stream.empty();
+    }
+    var query = getcollectionReference().where('favorites', arrayContains: uid);
+    if (categoryId != null && categoryId.isNotEmpty) {
+      query = query.where('categoryId', isEqualTo: categoryId);
+    }
+    return query.snapshots();
   }
 
   Future<void> updateEvent(Event event, bool isFavorite) async {
     var ref = getcollectionReference();
     var doc = ref.doc(event.id);
-    var myUid = FirebaseAuth.instance.currentUser!.uid;
+
+    var myUid = FirebaseAuth.instance.currentUser?.uid;
+    if (myUid == null) return;
+
     if (isFavorite) {
       event.favorites.removeWhere((element) => element == myUid);
     } else {
       event.favorites.add(myUid);
     }
 
-    await doc.update(event.toFirestore());
+    await doc.update({'favorites': event.favorites});
   }
 
   Future<void> deleteEvent(String id) async {

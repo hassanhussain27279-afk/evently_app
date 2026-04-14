@@ -1,7 +1,6 @@
 import 'package:evently_app/core/providers/app_config_provider.dart';
 import 'package:evently_app/ui/app_setup/app_setup_screen.dart';
 import 'package:evently_app/ui/home/home_screen.dart';
-import 'package:evently_app/ui/intoscreen/introscreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

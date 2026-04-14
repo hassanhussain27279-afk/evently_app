@@ -21,7 +21,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      
       floatingActionButton: Container(
         decoration: BoxDecoration(
           boxShadow: [
@@ -47,32 +46,35 @@ class _HomeScreenState extends State<HomeScreen> {
           topRight: Radius.circular(32),
         ),
 
-        child: BottomNavigationBar(
-          elevation: 0,
-          currentIndex: selectedIndex,
-          onTap: (value) {
-            setState(() {
-              selectedIndex = value;
-            });
-          },
+        child: SizedBox(
+          height: 80,
+          child: BottomNavigationBar(
+            elevation: 0,
+            currentIndex: selectedIndex,
+            onTap: (value) {
+              setState(() {
+                selectedIndex = value;
+              });
+            },
 
-          items: [
-            BottomNavigationBarItem(
-              activeIcon: Icon(Iconsax.home_bold),
-              icon: Icon(Iconsax.home_outline),
-              label: l10n.home,
-            ),
-            BottomNavigationBarItem(
-              activeIcon: Icon(Iconsax.heart_bold),
-              icon: Icon(Iconsax.heart_outline),
-              label: l10n.favorites,
-            ),
-            BottomNavigationBarItem(
-              activeIcon: Icon(Iconsax.user_bold),
-              icon: Icon(Iconsax.user_outline),
-              label: l10n.profile,
-            ),
-          ],
+            items: [
+              BottomNavigationBarItem(
+                activeIcon: Icon(Iconsax.home_bold),
+                icon: Icon(Iconsax.home_outline),
+                label: l10n.home,
+              ),
+              BottomNavigationBarItem(
+                activeIcon: Icon(Iconsax.heart_bold),
+                icon: Icon(Iconsax.heart_outline),
+                label: l10n.favorites,
+              ),
+              BottomNavigationBarItem(
+                activeIcon: Icon(Iconsax.user_bold),
+                icon: Icon(Iconsax.user_outline),
+                label: l10n.profile,
+              ),
+            ],
+          ),
         ),
       ),
     );

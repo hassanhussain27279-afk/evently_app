@@ -12,7 +12,7 @@ import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class HomeTabs extends StatefulWidget {
-  HomeTabs({super.key});
+  const HomeTabs({super.key});
 
   @override
   State<HomeTabs> createState() => _HomeTabsState();

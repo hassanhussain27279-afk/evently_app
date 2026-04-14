@@ -48,6 +48,7 @@ class _SignUpState extends State<SignUp> {
                   ],
                 ),
               ),
+              SizedBox(height: 30),
               Text(
                 localizations.createAccount,
                 style: theme.textTheme.titleLarge!.copyWith(
@@ -95,13 +96,13 @@ class _SignUpState extends State<SignUp> {
                       decoration: InputDecoration(
                         prefixIcon: Icon(Iconsax.lock_1_outline),
                         hintText: localizations.passwordHint,
-                        suffixIcon: IconButton(
-                          onPressed: () {
+                        suffixIcon: GestureDetector(
+                          onTap: () {
                             setState(() {
                               isPasswordHidden = !isPasswordHidden;
                             });
                           },
-                          icon: Icon(
+                          child: Icon(
                             isPasswordHidden
                                 ? Iconsax.eye_slash_outline
                                 : Iconsax.eye_outline,
@@ -122,13 +123,13 @@ class _SignUpState extends State<SignUp> {
                       decoration: InputDecoration(
                         prefixIcon: Icon(Iconsax.lock_1_outline),
                         hintText: localizations.confirmPassword,
-                        suffixIcon: IconButton(
-                          onPressed: () {
+                        suffixIcon: GestureDetector(
+                          onTap: () {
                             setState(() {
                               isPasswordHidden = !isPasswordHidden;
                             });
                           },
-                          icon: Icon(
+                          child: Icon(
                             isPasswordHidden
                                 ? Iconsax.eye_slash_outline
                                 : Iconsax.eye_outline,

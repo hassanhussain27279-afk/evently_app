@@ -71,7 +71,7 @@ class _EventEditState extends State<EventEdit> {
           children: [
             SizedBox(),
             Container(
-              margin: .symmetric(horizontal: 16),
+              margin: EdgeInsets.symmetric(horizontal: 16),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(
@@ -88,7 +88,7 @@ class _EventEditState extends State<EventEdit> {
                         ? selectedCategory.imageLight
                         : selectedCategory.imageDark,
                     width: double.infinity,
-                    fit: .cover,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
@@ -97,7 +97,7 @@ class _EventEditState extends State<EventEdit> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Column(
-                crossAxisAlignment: .start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: 8,
                 children: [
                   Text(
@@ -120,7 +120,7 @@ class _EventEditState extends State<EventEdit> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Column(
-                crossAxisAlignment: .start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: 8,
                 children: [
                   Text(
@@ -144,7 +144,7 @@ class _EventEditState extends State<EventEdit> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Row(
-                mainAxisAlignment: .start,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Icon(
                     Iconsax.calendar_add_outline,
@@ -182,7 +182,7 @@ class _EventEditState extends State<EventEdit> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Row(
-                mainAxisAlignment: .start,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Icon(
                     Iconsax.clock_outline,
