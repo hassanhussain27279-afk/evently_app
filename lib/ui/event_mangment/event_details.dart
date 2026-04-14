@@ -6,14 +6,13 @@ import 'package:evently_app/data/models/category.dart';
 import 'package:evently_app/data/models/event.dart';
 import 'package:evently_app/ui/event_mangment/event_edit.dart';
 import 'package:evently_app/ui/home/home_screen.dart';
-import 'package:evently_app/ui/home/tabs/home/home_tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class EventDetails extends StatefulWidget {
-  EventDetails({super.key, required this.event});
+  const EventDetails({super.key, required this.event});
   static const String id = '/EventDetails';
   final Event event;
 

@@ -48,7 +48,7 @@ class FirebaseAuthService {
 
   Future<UserCredential?> signInWithGoogle() async {
     try {
-      final googleSignIn = GoogleSignIn();
+      final googleSignIn = GoogleSignIn(forceCodeForRefreshToken: true);
       final googleUser = await googleSignIn.signIn();
 
       if (googleUser == null) return null;
@@ -69,5 +69,12 @@ class FirebaseAuthService {
       print("Google Sign-In Error: $e");
       return null;
     }
+  }
+
+  Future<void> signOut() async {
+    await Future.wait([
+      FirebaseAuth.instance.signOut(),
+      GoogleSignIn().signOut(),
+    ]);
   }
 }

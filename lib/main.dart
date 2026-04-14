@@ -22,7 +22,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  runApp(EventlyApp());
+  runApp(EventlyApp()); 
 }
 
 class EventlyApp extends StatefulWidget {

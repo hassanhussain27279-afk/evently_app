@@ -1,6 +1,4 @@
-import 'package:evently_app/core/providers/app_config_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class DotIndicator extends StatelessWidget {
   const DotIndicator({
@@ -13,7 +11,7 @@ class DotIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    var provider = Provider.of<AppConfigProvider>(context);
+    
     final isActive = index == currentIndex;
     return AnimatedContainer(
       duration: Duration(milliseconds: 300),
